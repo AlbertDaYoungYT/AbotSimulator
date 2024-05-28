@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://0ou6liabdv6k"]
+
+[ext_resource type="FontFile" uid="uid://c7cm6b8fqy3l4" path="res://Fonts/PoetsenOne-Regular.ttf" id="1_r5wvb"]
+
+[resource]
+default_font = ExtResource("1_r5wvb")
+default_font_size = 40

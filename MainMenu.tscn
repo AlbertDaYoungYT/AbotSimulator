@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://byuxoldva1q11"]
+
+[ext_resource type="Theme" uid="uid://0ou6liabdv6k" path="res://Menu Theme.tres" id="1_y4265"]
+[ext_resource type="Texture2D" uid="uid://c8ky0x65k0jrc" path="res://Icons/cube.svg" id="2_7a12o"]
+[ext_resource type="Texture2D" uid="uid://b0othv0o2paqw" path="res://Icons/continue.svg" id="2_c4fi7"]
+[ext_resource type="Script" path="res://Scripts/ContinueButton.gd" id="4_qrj66"]
+[ext_resource type="Script" path="res://Scripts/NewGameButton.gd" id="5_frn7u"]
+[ext_resource type="Script" path="res://Scripts/OptionsButton.gd" id="6_mu7pg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme = ExtResource("1_y4265")
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HSplitContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Left" type="CenterContainer" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HSplitContainer/Left"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_7a12o")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Abot Simulator"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="ContinueButton" type="MenuButton" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+icon = ExtResource("2_c4fi7")
+alignment = 0
+script = ExtResource("4_qrj66")
+
+[node name="NewGameButton" type="MenuButton" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+icon = ExtResource("2_c4fi7")
+alignment = 0
+script = ExtResource("5_frn7u")
+
+[node name="OptionsButton" type="MenuButton" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Options"
+icon = ExtResource("2_c4fi7")
+alignment = 0
+script = ExtResource("6_mu7pg")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HSplitContainer/Left/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+text = "Version (0.0.1)
+Developed by
+        Albert K."
+vertical_alignment = 2
+
+[node name="Right" type="CenterContainer" parent="MarginContainer/HSplitContainer"]
+layout_direction = 2
+layout_mode = 2
